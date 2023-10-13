@@ -19,7 +19,7 @@ numpy==1.21.6
 opencage==2.3.0
 packaging==23.2
 phonenumbers==8.13.22
-requests==2.31.0
+requests==2.0.6
 urllib3==2.2.3
 Werkzeug==3.0.0
 zipp==3.17.0
