@@ -1,5 +1,4 @@
 pip==23.2.1
-pip upgrade
 bit-array==0.1.0
 bitarray==0.8.1
 bokeh==0.12.4
