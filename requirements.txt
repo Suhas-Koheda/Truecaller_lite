@@ -1,0 +1,2 @@
+package1==version1
+package2==version2
