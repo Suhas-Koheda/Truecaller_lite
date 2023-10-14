@@ -23,6 +23,6 @@ def index():
             else:
                 return render_template('error.html')
         else:
-            return render_template('error.html')
+            return render_template('error-country.html')
     else:
         return render_template('index.html')
