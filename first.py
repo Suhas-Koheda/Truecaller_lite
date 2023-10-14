@@ -15,8 +15,11 @@ def index():
             t_zone=timezone.time_zones_for_geographical_number(phoneNumber)
             if(yourLocation=="India" and yourServiceProvider=="Telewings"):
                 yourServiceProvider="Airtel"
+                return render_template('result.html',yourLocation=yourLocation,yourServiceProvider=yourServiceProvider,t_zone=t_zone)
             else:
                 yourServiceProvider=yourServiceProvider
-        return render_template('result.html',yourLocation=yourLocation,yourServiceProvider=yourServiceProvider,t_zone=t_zone)
+                return render_template('result.html',yourLocation=yourLocation,yourServiceProvider=yourServiceProvider,t_zone=t_zone)
+        else:
+            return render_template('error.html')
     else:
         return render_template('index.html')
