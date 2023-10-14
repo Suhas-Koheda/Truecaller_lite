@@ -8,17 +8,20 @@ app = Flask(__name__)
 def index():
     if request.method=='POST':
         number=request.form['number']
-        phoneNumber = phonenumbers.parse(number)
-        if(phonenumbers.is_valid_number(phoneNumber)):
-            yourLocation = geocoder.description_for_number(phoneNumber,"en")
-            yourServiceProvider = carrier.name_for_number(phoneNumber,"en")
-            t_zone=timezone.time_zones_for_geographical_number(phoneNumber)
-            if(yourLocation=="India" and yourServiceProvider=="Telewings"):
-                yourServiceProvider="Airtel"
-                return render_template('result.html',yourLocation=yourLocation,yourServiceProvider=yourServiceProvider,t_zone=t_zone)
+        if(number[0]=='+'):
+            phoneNumber = phonenumbers.parse(number)
+            if(phonenumbers.is_valid_number(phoneNumber)):
+                yourLocation = geocoder.description_for_number(phoneNumber,"en")
+                yourServiceProvider = carrier.name_for_number(phoneNumber,"en")
+                t_zone=timezone.time_zones_for_geographical_number(phoneNumber)
+                if(yourLocation=="India" and yourServiceProvider=="Telewings"):
+                    yourServiceProvider="Airtel"
+                    return render_template('result.html',yourLocation=yourLocation,yourServiceProvider=yourServiceProvider,t_zone=t_zone,number=number)
+                else:
+                    yourServiceProvider=yourServiceProvider
+                    return render_template('result.html',yourLocation=yourLocation,yourServiceProvider=yourServiceProvider,t_zone=t_zone,number=number)
             else:
-                yourServiceProvider=yourServiceProvider
-                return render_template('result.html',yourLocation=yourLocation,yourServiceProvider=yourServiceProvider,t_zone=t_zone)
+                return render_template('error.html')
         else:
             return render_template('error.html')
     else:
