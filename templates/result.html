@@ -3,13 +3,19 @@
 <head>
     <title>Phone Number Info</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body style="background-color: #16161d;color: white;">
+    <div class="content">
     <h1>Phone Number Information</h1>
+    <br><br>
+    <div class="subcontent">
     <p>Location: {{ yourLocation }}</p>
     <p>Service Provider: {{ yourServiceProvider }}</p>
     <p>Time Zone: {{ t_zone }}</p>
     <p>Phone Number :{{number}}</p>
     <a href="/">Go back</a>
+</div>
+    </div>
 </body>
 </html>
