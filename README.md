@@ -33,7 +33,7 @@
 
 ### Built With
 
-Python - Bakend <br>
+Python - Backend <br>
 HTML,CSS - Frontend<br>
 Flask - Web Framework<br>
 
@@ -46,7 +46,9 @@ Flask - Web Framework<br>
 
 To set up the project locally download the files <br>
 The first.py file is the flask app that facilitates the backend processing of the python  <br>
+the PythonLogin.py program contains the logic onw hich the backend runs
 Files in the template folder are the templates that the flask app shows to the user
+The Stylesheet is present within in the static folder 
 
 ### Prerequisites
 
