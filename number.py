@@ -1,6 +1,8 @@
 #all imports!
 from flask import Flask,render_template,url_for,request
 import requests
+from geopy.geocoders import ArcGIS
+import folium as f
 
 
 #API definition!
@@ -54,6 +56,18 @@ def index():
         simplify(7)
         simplify(8)
         simplify(9)
+        def displaylocationmap(strh):
+            nom=ArcGIS()
+            s=nom.geocode(strh)
+            lat=s.latitude
+            longt=s.longitude
+            map=f.Map(location=[lat,longt])
+            f.Marker(location=[lat,longt],popup=strh,icon=f.Icon(color='green')).add_to(map)
+
+            map.save("C:\\Users\\suhas\\VSCODE\\test\\templates\\map.html")
+            
+        inp=l[7]
+        displaylocationmap(inp)
         #Returning the result!
         if(l[0]=='true'):
             return render_template ('result.html',inter=l[3],pref=l[4],code=l[5],name=l[6],loc=l[7],carr=l[8],type=l[9])
