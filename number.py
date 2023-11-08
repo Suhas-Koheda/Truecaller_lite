@@ -65,8 +65,7 @@ def index():
             f.Marker(location=[lat,longt],popup=strh,icon=f.Icon(color='green')).add_to(map)
 
             map.save("./templates/map.html")
-            map.show_in_browser()
-            
+
         inp=l[7]
         displaylocationmap(inp)
         #Returning the result!
@@ -76,3 +75,6 @@ def index():
             return render_template('error.html')
     else:
         return render_template('index.html')
+@app.route('/map')
+def map():
+    return render_template('map.html')
