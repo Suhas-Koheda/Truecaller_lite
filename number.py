@@ -65,7 +65,6 @@ def index():
             f.Marker(location=[lat,longt],popup=strh,icon=f.Icon(color='green')).add_to(map)
 
             map.save("./templates/map.html")
-
         inp=l[7]
         displaylocationmap(inp)
         #Returning the result!
