@@ -77,4 +77,5 @@ def map():
         longt=s.longitude
         map=f.Map(location=[lat,longt])
         f.Marker(location=[lat,longt],popup=strh,icon=f.Icon(color='green')).add_to(map)
-        return(map.show_in_browser())
+        map.save('templates/map.html')
+        return(map._repr_html_())
