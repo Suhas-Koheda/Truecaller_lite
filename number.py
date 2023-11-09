@@ -69,12 +69,12 @@ def map():
     strh=k
     nom=ArcGIS()
     s=nom.geocode(strh)
-    if(type(strh)=='NoneType'):
+    m=None
+    if(type(s)==type(m)):
+        return render_template('maperror.html')
+    else:
         lat=s.latitude
         longt=s.longitude
         map=f.Map(location=[lat,longt])
         f.Marker(location=[lat,longt],popup=strh,icon=f.Icon(color='green')).add_to(map)
-        map.save("./templates/map.html")
         return(map.show_in_browser())
-    else:
-        return render_template('maperror.html')
