@@ -11,7 +11,6 @@ payload = {}
 headers= {
   "apikey": "CSXdyBMEmGWItH9jfpfKv5meo8OmBeci"
 }
-
 #Flask definition!
 app = Flask(__name__)
 @app.route('/', methods=['POST','GET'])
@@ -56,17 +55,8 @@ def index():
         simplify(7)
         simplify(8)
         simplify(9)
-        def displaylocationmap(strh):
-            nom=ArcGIS()
-            s=nom.geocode(strh)
-            lat=s.latitude
-            longt=s.longitude
-            map=f.Map(location=[lat,longt])
-            f.Marker(location=[lat,longt],popup=strh,icon=f.Icon(color='green')).add_to(map)
-
-            map.save("./templates/map.html")
-        inp=l[7]
-        displaylocationmap(inp)
+        global k
+        k=l[7]
         #Returning the result!
         if(l[0]=='true'):
             return render_template ('result.html',inter=l[3],pref=l[4],code=l[5],name=l[6],loc=l[7],carr=l[8],type=l[9])
@@ -76,4 +66,12 @@ def index():
         return render_template('index.html')
 @app.route('/map')
 def map():
-    return render_template('map.html')
+    strh=k
+    nom=ArcGIS()
+    s=nom.geocode(strh)
+    lat=s.latitude
+    longt=s.longitude
+    map=f.Map(location=[lat,longt])
+    f.Marker(location=[lat,longt],popup=strh,icon=f.Icon(color='green')).add_to(map)
+    map.save("./templates/map.html")
+    return(map.show_in_browser())
