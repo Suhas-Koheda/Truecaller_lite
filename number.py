@@ -56,7 +56,9 @@ def index():
         simplify(8)
         simplify(9)
         global k
+        global z
         k=l[7]
+        z=l[6]
         #Returning the result!
         if(l[0]=='true'):
             return render_template ('result.html',inter=l[3],pref=l[4],code=l[5],name=l[6],loc=l[7],carr=l[8],type=l[9])
