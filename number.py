@@ -56,6 +56,8 @@ def index():
         simplify(8)
         simplify(9)
         global k
+        if (l[7]=='"Andhra Pradesh"'):
+            l[7]='Telangana or Andhra Pradesh - (United Andhra Pradesh)'
         k = l[7]+l[6]
         #Returning the result!
         if l[0] == 'true':
