@@ -51,5 +51,3 @@ To run the project locally:
 
 The project is maintained by [suhassk-hash](https://github.com/suhassk-hash). Contributions from other developers are welcome through pull requests.
 ```
-
-You can copy and paste this content into a `README.md` file in your Truecaller_lite project repository on GitHub.
