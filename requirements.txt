@@ -6,7 +6,7 @@ cryptography==3.3.2
 
 # Other packages
 bit-array==0.1.0
-bitarray==0.8.1
+bitarray==2.7.2  # Updated version
 cloudant==2.3.0
 dominate==2.2.0
 
