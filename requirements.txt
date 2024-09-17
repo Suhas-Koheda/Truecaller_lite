@@ -1,6 +1,6 @@
 bit-array==0.1.0
 bitarray==0.8.1
-bokeh==0.12.4
+
 cffi==1.9.1
 cloudant==2.3.0
 cryptography==3.3.2
